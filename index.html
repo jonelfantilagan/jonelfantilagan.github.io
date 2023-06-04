@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonel's E-Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/portfolio.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/01bbdd0a9e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+    <div class="container">
+        <nav>
+            <div class="logo"></div>
+            <ul id="sidemenu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Qualifications</a></li>
+                <li><a href="#contact">Contacts</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <span class="topline">Hello I'm</span>
+            <h1><span class="multiText"></span></h1>
+            <p>Rizal Technological University</p>
+        </div>
+    </div>
+    </div>
+    <!--About-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="img/Fantilagan1x1.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hello, <strong>Jonel Marco S. Fantilagan</strong>, 21 years old. I'm a 4th year Computer Engineering student that aspires to be a Full Stack Developer someday.</p>
+                    <p>I'm thirsty for knowledge that I'm interested with, and that makes me a person of adaptability whenever a newer version of something I like is available</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Qualifications')">Qualifications</p>
+                        <p class="tab-links" onclick="opentab('education')">My Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Qualifications">
+                        <ul>
+                            <li><span>Computer Engineer</span><br>Graduating Student of Computer Engineering</li>
+                            <li><span>Front-end Developer</span><br>Developing UI Interarctions</li>
+                            <li><span>Application Developer</span><br>Android Mobile Application Developer</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019 - Current</span><br>Bachelor of Science in<br>Computer Engineering</li>
+                            <li><span>2017-2019</span><br>TVL - ICT</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--services-->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">Qualifications</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-sharp fa-solid fa-code"></i>
+                <h2>Computer Engineer</h2>
+                <p>I'm currently a student of Rizal Technological University taking a program of Computer Engineering</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-palette"></i>
+                <h2>Front end Developer</h2>
+                <p>I'm currently acquiring the necessary skills and expertise on how to be a professional Front end Developer</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-brands fa-android"></i>
+                <h2>Application Developer</h2>
+                <p>I have an experience on working in an Android Application through Android Studio IDE using JavaScript</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Contact-->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-envelope"></i>fantilaganj@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>09065597074</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jonelmarco.fantilagan/" target=”_blank”><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/jonelmarco/" target=”_blank”><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#services"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <a href="img/Fantilagan-Jonel-CV.pdf" target=”_blank” class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right"></div>
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+        <a href="#" class="to-top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
+    </div>
+    <div class="copyright">
+        <p>Copyright &copy; Jonel Marco. 2023</p>
+    </div>
+</div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+        function closemenu(){
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyfk59YZWtUzndlvrvX3IwLxthwh1oHXOq7IDhrZITCnoVhvsJ3qkwXw9nBSPBNXBWRBw/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script src = "https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typingEffect = new Typed(".multiText",{
+        strings : ["Jonel Marco","Computer Engineer","Front-end Developer"],
+        loop : true, 
+        typeSpeed : 100, 
+        backSpeed : 80, 
+        backDelay : 1500
+    })
+  </script>
+  <script>
+    const toTop = document.querySelector(".to-top");
+
+    window.addEventListener("scroll",() =>{
+        if(window.pageYOffset>100){
+            toTop.classList.add("active"); }
+            else{
+                toTop.classList.remove("active")
+        }
+    })
+  </script>
+</body>
+</html>
